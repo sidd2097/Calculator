@@ -30,3 +30,9 @@ input {
     padding: 10px;
     font-size: 1.5rem;
 }
+
+.result {
+    height: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}

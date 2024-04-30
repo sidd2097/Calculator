@@ -5,6 +5,7 @@ import './Calculator.css';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
 
   const handleButtonClick = (value) => {
     setInput(prevInput => prevInput + value);
@@ -13,14 +14,15 @@ const Calculator = () => {
   const evaluateExpression = () => {
     try {
       const result = evaluate(input);
-      setInput(result.toString());
+      setResult(result.toString());
     } catch (error) {
-      setInput('Error');
+        setResult('Error');
     }
   };
 
   const clearInput = () => {
     setInput('');
+    setResult('');
   };
 
   const evaluate = (expression) => {
@@ -74,6 +76,7 @@ const Calculator = () => {
     <div className="calculator">
       <h1>React Calculator</h1>
       <input type="text" value={input} readOnly />
+      <div className='result'>{result}</div>
       <div className="buttons">
         <button onClick={() => handleButtonClick('7')}>7</button>
         <button onClick={() => handleButtonClick('8')}>8</button>
